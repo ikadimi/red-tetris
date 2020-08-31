@@ -27,7 +27,7 @@ function NavbarComponent() {
         }, []);
         return size;
     }
-    const [width, height] = useWindowSize()
+    const [width] = useWindowSize()
     const arr = [
     {msg: 'GG', icon: 0, text: 'GOOD GAME'}, {msg: 'HURRY!', icon: 1, text: 'HURRY UP'},
     {msg: 'NEXT', icon: 2, text: 'GO NEXT'}, {msg: 'EZ', icon: 3, text: 'THAT WAS EAZY'},
@@ -45,6 +45,8 @@ function NavbarComponent() {
                 return <FaPoop size={16}/>
             case 4:
                 return <GiPodiumWinner size={16}/>
+            default:
+                break
         }
     }
 

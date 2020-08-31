@@ -27,20 +27,6 @@ function TetrisContainer() {
             requestRef.current = requestAnimationFrame(gameLoop)
     }
 
-    useEffect(() => {
-        if (!loading && active && !gameOver) {
-            requestRef.current = requestAnimationFrame(gameLoop)
-            document.body.addEventListener('keydown', keyHandler)
-            document.body.addEventListener('keyup', slowKeyHandler)
-        }
-
-        return () => {
-            document.body.removeEventListener('keydown', keyHandler)
-            document.body.removeEventListener('keyup', slowKeyHandler)
-            cancelAnimationFrame(requestRef.current)
-        }
-    }, [loading, active, gameOver])
-
     const slowKeyHandler = event => {
         event.preventDefault()
         switch (event.keyCode) {
@@ -48,6 +34,8 @@ function TetrisContainer() {
                 return dispatch(userInput('space'))
             case 38: case 87:
                 return dispatch(userInput('up'))
+            default:
+                break
         } 
     }
 
@@ -65,6 +53,20 @@ function TetrisContainer() {
                 break 
         }
     }
+
+    useEffect(() => {
+        if (!loading && active && !gameOver) {
+            requestRef.current = requestAnimationFrame(gameLoop)
+            document.body.addEventListener('keydown', keyHandler)
+            document.body.addEventListener('keyup', slowKeyHandler)
+        }
+
+        return () => {
+            document.body.removeEventListener('keydown', keyHandler)
+            document.body.removeEventListener('keyup', slowKeyHandler)
+            cancelAnimationFrame(requestRef.current)
+        }
+    }, [loading, active, gameOver]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const fromBoardToGrid = (board) => {
         let displayBoard = []

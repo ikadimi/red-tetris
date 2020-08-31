@@ -29,7 +29,7 @@ function TetrisOnlineContainer({location}) {
         return () => {
             dispatch(leaveGame())
         }
-    }, [])
+    }, [dispatch, location.search])
 
     return (
         <div>
