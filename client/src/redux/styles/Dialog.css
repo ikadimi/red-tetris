@@ -1,0 +1,110 @@
+.dialogContainer {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-family: arial, sans-serif;
+}
+
+.pauseButton{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    /* border: 5px solid white; */
+    border-left: double wheat;
+    padding-left: 20px;
+    border-width: 60px;
+}
+
+.pauseButton p {
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(175, 161, 161);
+    font-weight: bold;
+}
+
+.startButton{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #EBECF1;
+    /* background-image: url("../../../../icons/playBackground.jpg");
+    background-size: cover; */
+    background-color: #2375D8;
+    font-size: 2rem;
+    color: #EBECF1;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.startButton:active {
+    background-color: rgb(95, 97, 95);
+    /* top: .2em; */
+}
+
+/*  --------- Game over -----------  */
+
+.titleContainer {
+    display: inline-block;
+    margin-bottom: 2rem;
+    width: 100%;
+    border-bottom: 3px solid #F8F8FF;
+    background: transparent;
+    font-size: 1.2rem;
+    color: #F8F8FF;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.bodyContainer p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.1rem;
+    color: #F8F8FF;
+}
+
+.restartButton {
+    display: inline-block;
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 3px solid #F8F8FF;
+    background: transparent;
+    font-size: 1rem;
+    color: #F8F8FF;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.gameOverContainer {
+    margin: auto;
+    position: relative;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: solid 2px #595959;
+    border-radius: 8px;
+    padding: 60px 40px;
+    transform: translateY(0px);
+    animation-name: gameOver;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    text-align: center;
+    box-shadow: -10px 10px 67px -12px rgba(255,255,255,0.2);
+}
+
+@keyframes gameOver {
+    from {transform: translateY(0px);}
+    to {transform: translateY(150px);}
+}

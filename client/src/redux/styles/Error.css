@@ -1,0 +1,72 @@
+.alertBox {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    border-radius: 8px;
+    border: 2px solid black;
+    padding: 10px 20px;
+    background-color: tomato;
+    color: rgb(231, 231, 231)
+}
+
+.closeButton {
+    margin-left: 30px;
+    border: none;
+    border-radius: 8px;
+    float: right;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    background-color: rgb(231, 231, 231);
+    color: black
+}
+
+/* ---------------- alert page -------------------  */
+
+.alertContainer {
+    position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: arial, sans-serif;
+	overflow: hidden;
+}
+
+.contentContainer {
+    position: relative;
+	width: 600px;
+	max-width: 100%;
+	margin: 20px;
+	background: white;
+	padding: 60px 40px;
+	text-align: center;
+	box-shadow: -10px 10px 67px -12px rgba(255,255,255,0.2);
+	animation: 0.8s 1.2s cubic-bezier(0.39,0.575,0.28,0.995) forwards;
+}
+
+.contentContainer p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.1rem;
+    color: #595959;
+}
+
+.homeButton {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    border: 3px solid #595959;
+    background: transparent;
+    font-size: 1rem;
+    color: #595959;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}

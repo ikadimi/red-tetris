@@ -1,0 +1,245 @@
+nav {
+    position: absolute;
+    z-index: 3;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    border: 2px solid #EBECF1;
+    border-radius: 30px;
+    animation: slide-in 1s ease-out;
+}
+
+.navList {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0 30px;
+    list-style-type: none;
+}
+
+.listElements button {
+    color: #2375D8;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.listElements {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background 0.2s;
+}
+
+.listElements:hover {
+    background: #EC4138;
+    border: 2px solid #F05749;
+    border-right: 2px solid #E02A21;
+    border-bottom: 2px solid #E02A21;
+}
+
+.listElements button:hover {
+    color: #F9F8FD;
+}
+  
+@keyframes slide-in {
+    0% {
+        top: -50px;
+    }
+    40% {
+        top: 20px;
+    }
+    70% {
+        top: 10px;
+    }
+    100% {
+        top: 15px;
+    }
+}
+
+/*  ------------notifications-----------  */
+
+.activeNotification {
+    position: absolute;
+    z-index: 3;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #EBECF1;
+    background-color: black;
+    border: 2px solid #2375D8; 
+    border-radius: 30px;
+    animation: notification 1s ease-out;
+}
+
+.notificationContent {
+    width: auto;
+    padding: 0px 50px ;
+}
+
+@keyframes notification {
+    0% {
+        bottom: -50px;
+    }
+    40% {
+        bottom: 60px;
+    }
+    70% {
+        bottom: 40px;
+    }
+    100% {
+        bottom: 50px;
+    }
+}
+
+/* ------- SETTINGS ------------------ */
+.settingDialog {
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%);
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    background-color: black;
+    border: 2px solid #EBECF1;
+    border-radius: 30px;
+    /* animation: slide-out 1s ease-out; */
+}
+
+.settingsButton {
+    position: absolute;
+    background: transparent;
+    border: none;
+    z-index: 3;
+    top: 15px;
+    right: 15px;
+    margin: 0;
+    cursor: pointer
+}
+
+.closeSettings {
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    left: 5px;
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.audioSettings {
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    right: 5px;
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.navHomeButton {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* border: 2px solid white; */
+    box-shadow: none;
+    background-color: #EBECF1;
+    color: black;
+    border-radius: 8px;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+
+.navHomeButton span {
+    position: relative;
+    bottom: 2px;
+}
+
+.keyList {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    /* flex-flow: column; */
+    margin: 0;
+    list-style-type: none; 
+}
+
+.movementButtons {
+    position: relative;
+    margin: 100px 50px;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+.movementButtons p {
+    position: absolute;
+    color: rgb(250, 52, 52);
+    border: 1px solid #EBECF1;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding-top: 3px;
+    margin: 0;
+}
+
+.spaceKey {
+    position: absolute;
+    top: 125px;
+    left: 160px;
+    border: 1px solid #2375D8;
+    border-radius: 15px;
+    padding: 0px 15px;
+}
+
+.upKey {
+    left: 35px;
+    top: 0px
+}
+
+.leftKey {
+    left: 0px;
+    top: 35px
+}
+
+.rightKey {
+    left: 70px;
+    top: 35px
+}
+
+.downKey {
+    left: 35px;
+    top: 70px
+}
+
+/* .footerListElements {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 10px;
+} */
+
+
+@keyframes slide-out {
+    0% {
+        left: -30px;
+    }
+    40% {
+        left: 15px;
+    }
+    70% {
+        left: 7px;
+    }
+    100% {
+        left: 10px;
+    }
+}

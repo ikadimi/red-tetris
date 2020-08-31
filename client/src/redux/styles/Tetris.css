@@ -1,0 +1,139 @@
+.grid_container {
+    box-sizing: content-box;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    /* border: 5px solid  cadetblue; */
+    margin: 30px auto;
+    background-color: rgba(0,0,0,0.6);
+    width: 200px;
+    height: 400px;
+}
+
+.heroContainer {
+   /* background-image: url("./rocketBackground.jpg") !important;
+   background-size: cover;
+   background-repeat: no-repeat; */
+   background: rgb(2,0,36);
+   background: linear-gradient( rgba(2,0,36,1) 0%, rgb(2, 2, 105) 60%);
+}
+
+.gridEl {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 0.2px solid white;  
+}
+
+.style_moving {
+    background-color: red;
+}
+
+.style_v {
+    border: solid #FF0000;
+}
+
+.style_9 {
+    background-color: #A5F2F3;
+}
+
+.style_0 {
+    background-color: none;
+}
+
+.style_1 {
+    background-color: #f75990;
+}
+
+.style_2 {
+    background-color: #72CB3B;
+}
+
+.style_3 {
+    background-color: #FFD500;
+}
+
+.style_4 {
+    background-color: #FF971C;
+}
+
+.style_5 {
+    background-color: #beef00;
+}
+
+.style_6 {
+    background-color: #DA70D6;
+}
+
+.style_7 {
+    background-color: #CC99FF;
+}
+
+.adminBadge {
+    position: absolute;
+    top: 16px;
+    left: -2px;
+    width: 80px;
+    height: 20px;
+    background-color: black;
+    border-radius: 8px;
+    border: solid 0.5px#00FFFF;
+    text-align: center;
+    transform: rotate(-30deg);
+    color: white;
+}
+
+/* -------side-Container---------------- */
+
+.wrapContainer {
+    display: flex;
+    /* position: relative; */
+    flex-flow: row nowrap;
+    margin: auto;
+    width: 350px;
+}
+
+.sideContainer {
+    box-sizing: content-box;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 5px solid  cadetblue; */
+    margin: auto;
+    /* background-color: rgba(0,0,0,0.8); */
+    width: 150px;
+    height: 400px;
+}
+
+.pieceContainer {
+    box-sizing: content-box;
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 60px;
+    height: 80px; */
+    margin: auto;
+}
+
+.nextPiece {
+    margin: auto;
+    display: flex;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 0.2px solid white; 
+}
+
+.infoContainer {
+	max-width: 100%;
+    margin: 10px;
+	text-align: left;
+}
+
+.infoContainer p {
+    font-size: 0.7rem;
+    margin-top: auto;
+    letter-spacing: 0.1rem;
+    color: white;
+    border-bottom: solid white;
+}
