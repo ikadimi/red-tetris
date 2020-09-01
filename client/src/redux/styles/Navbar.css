@@ -77,9 +77,37 @@ nav {
     animation: notification 1s ease-out;
 }
 
+.activeMobileNotification {
+    position: absolute;
+    z-index: 3;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #EBECF1;
+    background-color: black;
+    border: 2px solid #2375D8; 
+    border-radius: 30px;
+    animation: mobileNotification 1s ease-out; 
+}
+
 .notificationContent {
     width: auto;
     padding: 0px 50px ;
+}
+
+@keyframes mobileNotification {
+    0% {
+        left: -50px;
+    }
+    40% {
+        left: 52%;
+    }
+    70% {
+        left: 48%;
+    }
+    100% {
+        left: 50%;
+    }
 }
 
 @keyframes notification {
@@ -252,5 +280,69 @@ nav {
     }
     100% {
         left: 10px;
+    }
+}
+
+/*  ------------CHAT----------- */
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.chatForm {
+    position: absolute;
+    z-index: 3;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    border: 2px solid #EBECF1;
+    height: 40px;
+    border-radius: 30px;
+    text-align: center;
+    animation: pop-out 0.8s ease-out;
+}
+
+.chatInput {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    margin: auto;
+    padding-top: 8px;
+    padding-left: 5px;
+    color: white;
+    border: none;
+    width: 80%;
+    font-size: 1.2em;
+}
+
+.chatButton {
+    position: relative;
+    bottom: 3px;
+    cursor: pointer;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #2979FF;
+    border-radius: 30px;
+    display: inline-block;
+    border: none;
+    font-size: 0.5em;
+    height: 36px;
+    width: 20%;
+}
+
+@keyframes pop-out {
+    0% {
+        top: -50px;
+    }
+    40% {
+        top: 100px;
+    }
+    70% {
+        top: 70px;
+    }
+    100% {
+        top: 80px;
     }
 }

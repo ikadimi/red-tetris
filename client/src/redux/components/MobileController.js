@@ -10,12 +10,12 @@ function MobileController() {
 
     return (
         <div className="mobileController">
-            <button onClick={() => dispatch(userInput('space'))} className="spaceButton"><MdSpaceBar style={{color: '#2375D8'}} size={40}/></button>
+            <button onClick={() => dispatch(userInput('space'))} className="spaceButton"><MdSpaceBar style={{color: '#72CB3B'}} size={40}/></button>
             <div className="controllerButtons">
-                    <button onClick={() => dispatch(userInput('up'))} className="upButton"><AiOutlineArrowUp style={{color: '#2375D8'}} size={25}/></button>
-                    <button onClick={() => dispatch(userInput('left'))} className="leftButton"><AiOutlineArrowLeft style={{color: '#2375D8'}} size={25}/></button>
-                    <button onClick={() => dispatch(userInput('right'))} className="rightButton"><AiOutlineArrowRight style={{color: '#2375D8'}} size={25}/></button>
-                    <button onClick={() => dispatch(userInput('down'))} className="downButton"><AiOutlineArrowDown style={{color: '#2375D8'}} size={25}/></button>
+                    <button onClick={() => dispatch(userInput('up'))} className="upButton"><AiOutlineArrowUp style={{color: '#f75990'}} size={25}/></button>
+                    <button onClick={() => dispatch(userInput('left'))} className="leftButton"><AiOutlineArrowLeft style={{color: '#CC99FF'}} size={25}/></button>
+                    <button onClick={() => dispatch(userInput('right'))} className="rightButton"><AiOutlineArrowRight style={{color: '#FF971C'}} size={25}/></button>
+                    <button onClick={() => dispatch(userInput('down'))} className="downButton"><AiOutlineArrowDown style={{color: '#beef00'}} size={25}/></button>
             </div>
         </div>
     )

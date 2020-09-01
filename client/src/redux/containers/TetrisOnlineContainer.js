@@ -5,12 +5,11 @@ import TetrisContainer from './TetrisContainer'
 import TetrisEnemyContainer from './TetrisEnemyContainer'
 import Error from '../components/ErrorComponent'
 import Navbar from './Navbar'
-import Notification from '../components/NotificationComponent'
 import { joinActionCreator, joinFailure, roomEventListeners, leaveRoom } from '../actions/actions'
 
 function TetrisOnlineContainer({location}) {
     const dispatch = useDispatch()
-    const {room, error, notification} = useSelector(state => state)
+    const {room, error} = useSelector(state => state)
     const clients = [...room.clients.values()]
     
     useEffect(() => {
@@ -18,6 +17,8 @@ function TetrisOnlineContainer({location}) {
 
         if (!name)
             dispatch(joinFailure("Name not specified"))
+        else if (window.innerWidth < 400 || window.innerHeight < 450)
+            dispatch(joinFailure('WINDOW TO SMALL FOR THE GAME'))
         else {
             if (Array.isArray(name))
                 name = name[0]
@@ -40,7 +41,6 @@ function TetrisOnlineContainer({location}) {
                     <TetrisContainer mode={'online'}/>
                     {clients.map((el, index) => (<TetrisEnemyContainer key={index} className="EnemyContainer" board={el.board} info={el.peer}/>))}
                 </div>
-                {notification ? <Notification notification={notification}/> : null}
             </div>
             }
         </div>

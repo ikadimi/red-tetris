@@ -15,9 +15,9 @@ function Join() {
         <div className="joinOuterContainer">
             <div className="joinInnerContainer">
                 <h1 className="heading">Join</h1>
-                <div><input placeholder="Name" className="joinInput" type="text" onChange={(event) => setName(event.target.value)}/></div>
+                <div><input placeholder="Name" maxLength={30} className="joinInput" type="text" onChange={(event) => setName(event.target.value)}/></div>
                 <div className="relativeInput">
-                    <input disabled={costum} placeholder="Room" className="joinInput mt-20" type="text" onChange={(event) => setRoom(event.target.value)}/>
+                    <input disabled={costum} placeholder="Room" maxLength={30} className="joinInput mt-20" type="text" onChange={(event) => setRoom(event.target.value)}/>
                     <button className="randomRooms" onClick={() => dispatch(costumRoom())}>Costum</button>
                 </div>
                 <Link onClick={event => (!name || (!room && !costum)) ? event.preventDefault() : null} to={`/online/?room=${room}&name=${name}`}>

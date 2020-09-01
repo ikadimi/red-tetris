@@ -1,8 +1,8 @@
 import React from 'react'
 
-function NotificationComponent({ notification }) {
+function NotificationComponent({ notification, width }) {
     return (
-        <div className='activeNotification'>
+        <div className={width < 500 ? 'activeMobileNotification' : 'activeNotification'}>
             <p className="notificationContent">{notification}</p>
         </div>
     )
