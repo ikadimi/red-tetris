@@ -2,6 +2,7 @@ import React, {useLayoutEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { newNotification, openCloseSettings } from '../actions/actions'
 import Settings from '../components/Settings'
+import MobileController from '../components/MobileController'
 
 import { FaPoop } from 'react-icons/fa'
 import { SiRiotgames } from 'react-icons/si'
@@ -60,9 +61,10 @@ function NavbarComponent() {
                 </li>))}
             </ul>
             </nav>
-            <button onClick={() => dispatch(openCloseSettings())} className="settingsButton">
+            <button onClick={() => dispatch(openCloseSettings())} className={width < 500 ? "settingsPhoneButton" : "settingsButton"}>
                 <GiGamepadCross size={28} style={{color: '#2375D8'}}/>
             </button>
+            {width < 500 ? <MobileController /> : null}
             {settings ? <Settings /> : null}
         </div>
     )

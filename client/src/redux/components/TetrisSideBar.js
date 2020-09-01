@@ -13,7 +13,7 @@ function TetrisSideBar() {
 
     return (
         <div className="sideContainer">
-            <div className="infoContainer">
+            <div className="myInfoContainer">
                 <p>NAME: {name}</p>
                 <p>SCORE: {score}</p>
                 <p>LINES: {lineCleared}</p>

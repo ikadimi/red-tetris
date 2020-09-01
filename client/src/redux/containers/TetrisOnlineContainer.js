@@ -6,7 +6,7 @@ import TetrisEnemyContainer from './TetrisEnemyContainer'
 import Error from '../components/ErrorComponent'
 import Navbar from './Navbar'
 import Notification from '../components/NotificationComponent'
-import { joinActionCreator, joinFailure, roomEventListeners, leaveGame } from '../actions/actions'
+import { joinActionCreator, joinFailure, roomEventListeners, leaveRoom } from '../actions/actions'
 
 function TetrisOnlineContainer({location}) {
     const dispatch = useDispatch()
@@ -27,7 +27,7 @@ function TetrisOnlineContainer({location}) {
             dispatch(roomEventListeners())
         }
         return () => {
-            dispatch(leaveGame())
+            dispatch(leaveRoom())
         }
     }, [dispatch, location.search])
 

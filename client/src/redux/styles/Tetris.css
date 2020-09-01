@@ -11,9 +11,6 @@
 }
 
 .heroContainer {
-   /* background-image: url("./rocketBackground.jpg") !important;
-   background-size: cover;
-   background-repeat: no-repeat; */
    background: rgb(2,0,36);
    background: linear-gradient( rgba(2,0,36,1) 0%, rgb(2, 2, 105) 60%);
 }
@@ -124,16 +121,26 @@
     border: 0.2px solid white; 
 }
 
-.infoContainer {
+.infoContainer, .myInfoContainer {
 	max-width: 100%;
     margin: 10px;
 	text-align: left;
+}
+
+.myInfoContainer p {
+    font-size: 0.7rem;
+    margin-top: auto;
+    letter-spacing: 0.1rem;
+    color: white;
+    padding-bottom: 2px;
+    border-bottom: solid white; 
 }
 
 .infoContainer p {
     font-size: 0.7rem;
     margin-top: auto;
     letter-spacing: 0.1rem;
-    color: white;
+    color: rgb(241, 94, 94);
+    padding-bottom: 2px;
     border-bottom: solid white;
 }

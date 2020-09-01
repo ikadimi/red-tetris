@@ -1,0 +1,70 @@
+.mobileController {
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+}
+
+.spaceButton {
+    margin: auto 20px;
+    height: 50px;
+    width: 100px;
+    border-radius: 15px;
+    background-color: #2375D8;
+    cursor: pointer;
+}
+
+.controllerButtons {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    text-align: right;
+}
+
+.controllerButtons button {
+    background: transparent;
+    border: none;
+}
+
+.controllerButtons button:active {
+    background: white;
+}
+
+.upButton {
+    position: absolute;
+    top: 0px;
+    left: 35px;
+    border: 1px solid white !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.leftButton {
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    border: 1px solid white !important;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.rightButton {
+    position: absolute;
+    top: 35px;
+    left: 70px;
+    border: 1px solid white !important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.downButton {
+    position: absolute;
+    top: 70px;
+    left: 35px;
+    border: 1px solid white !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

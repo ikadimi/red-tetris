@@ -33,6 +33,9 @@ io.on('connect', (socket) => {
         if (!name)
             callback({error: "Name is missing"})
         else {
+            if (client.room) {
+                return client.restartGame() 
+            }
             client.name = name
             if (!room)
                 room = createId()
@@ -107,7 +110,7 @@ io.on('connect', (socket) => {
         }
     })
 
-    socket.on('disconnect', (reason) => { 
+    socket.on('disconnect', (reason) => {
         const room = client.room
 
         if (room) {

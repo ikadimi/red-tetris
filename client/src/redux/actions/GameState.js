@@ -34,13 +34,6 @@ export const assignAdmin = () => {
     }
 }
 
-export const leaveGame = () => {
-    return function() {
-        socket.disconnect()
-        socket.off()
-    }
-}
-
 export const myNotification = (payload) => {
     return function(dispatch, getState) {
         const notification = getState().notification

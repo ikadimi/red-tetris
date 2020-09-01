@@ -30,7 +30,6 @@ const TetrisReducer = (state = initialState, {type, payload}) => {
                 ...state,
                 active: false,
                 gameOver: false,
-                admin: false,
                 lost: false,
                 settings: false,
             }

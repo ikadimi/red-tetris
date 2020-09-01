@@ -2,7 +2,7 @@ import { INITIATION_SUCCESS, SET_PIECES, SET_BOARD, DROP_PIECE, PIECE_CHANGE, UP
 import React from 'react'
 import socket from "../../socket"
 import { createNewBoard, joinFailure } from './JoinActions'
-import {gameOver, gameLost, gameOn, assignAdmin, myNotification, pauseBackgroundMusic, playMiniBeepSound, playBeepSound} from './actions'
+import {gameOver, gameLost, gameOn, assignAdmin, myNotification, pauseBackgroundMusic, playMiniBeepSound, playBeepSound, playBackgroundMusic} from './actions'
 
 export const setBoard = (payload) => {
     return {
@@ -77,6 +77,7 @@ export const roomEventListeners = () => {
 
         socket.on('gameOn', () => {
             dispatch(gameOn())
+            playBackgroundMusic()
         })
 
         socket.on('restartGame', () => {
@@ -154,16 +155,19 @@ export const tetrisEventListeners = () => {
 }
 
 export const userInput = (key) => {
-    return function(dispatch){
-        socket.emit("userInput", key, (newBoard) => {
-            if (newBoard) {
-                if (key === 'left' || key === 'right' || key === 'up')
-                    playMiniBeepSound()
-                else if (key === 'space')
-                    playBeepSound()
-                dispatch(setBoard(newBoard))
-            }
-        })
+    return function(dispatch, getState){
+        const active = getState().active
+        if (active) {
+            socket.emit("userInput", key, (newBoard) => {
+                if (newBoard) {
+                    if (key === 'left' || key === 'right' || key === 'up')
+                        playMiniBeepSound()
+                    else if (key === 'space')
+                        playBeepSound()
+                    dispatch(setBoard(newBoard))
+                }
+            })
+        }
     }
 }
 

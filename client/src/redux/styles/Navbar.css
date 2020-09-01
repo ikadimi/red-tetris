@@ -124,6 +124,17 @@ nav {
     cursor: pointer
 }
 
+.settingsPhoneButton {
+    position: absolute;
+    background: transparent;
+    border: none;
+    z-index: 3;
+    bottom: 5px;
+    left: 5px;
+    margin: 0;
+    cursor: pointer 
+}
+
 .closeSettings {
     position: absolute;
     z-index: 3;
