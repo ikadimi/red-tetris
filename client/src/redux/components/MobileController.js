@@ -10,7 +10,7 @@ function MobileController() {
 
     return (
         <div className="mobileController">
-            <button onClick={() => dispatch(userInput('space'))} className="spaceButton"><MdSpaceBar style={{color: 'white'}} size={40}/></button>
+            <button onClick={() => dispatch(userInput('space'))} className="spaceButton"><MdSpaceBar style={{color: '#2375D8'}} size={40}/></button>
             <div className="controllerButtons">
                     <button onClick={() => dispatch(userInput('up'))} className="upButton"><AiOutlineArrowUp style={{color: '#2375D8'}} size={25}/></button>
                     <button onClick={() => dispatch(userInput('left'))} className="leftButton"><AiOutlineArrowLeft style={{color: '#2375D8'}} size={25}/></button>
