@@ -17,7 +17,7 @@ function TetrisOnlineContainer({location}) {
 
         if (!name)
             dispatch(joinFailure("Name not specified"))
-        else if (window.innerWidth < 400 || window.innerHeight < 450)
+        else if (window.innerWidth < 300 || window.innerHeight < 300)
             dispatch(joinFailure('WINDOW TO SMALL FOR THE GAME'))
         else {
             if (Array.isArray(name))
