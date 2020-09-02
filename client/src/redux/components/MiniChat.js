@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { newNotification } from '../actions/actions'
 
-function MiniChat() {
+function MiniChat({ openChat }) {
     const [message, setMessage] = useState('')
     const dispatch = useDispatch()
 
@@ -11,6 +11,7 @@ function MiniChat() {
         if (message) {
             dispatch(newNotification(message))
             setMessage('')
+            openChat(false)
         }
     }
 

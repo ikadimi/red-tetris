@@ -14,16 +14,19 @@
     left: 50%;
     top: 20%;
     transform: translate(-50%);
-    /* border: 5px solid white; */
-    border-left: double wheat;
-    padding-left: 20px;
-    border-width: 60px;
+    border-radius: 20px;
+    border: 2px solid white;
+    padding: 10px 20px;
+    /* border-width: 60px; */
 }
 
 .pauseButton p {
     text-align: center;
     font-size: 2rem;
-    color: rgb(175, 161, 161);
+    color: #A5F2F3;
+    border-left: double #A5F2F3;
+    padding-left: 10px;
+    border-width: 50px;
     font-weight: bold;
 }
 
@@ -108,4 +111,22 @@
 @keyframes gameOver {
     from {transform: translateY(0px);}
     to {transform: translateY(150px);}
+}
+
+/* -------------LOADING-------------- */
+
+.loadingAnimation {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3S;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+    from {transform: rotateZ(0deg)}
+    to {transform: rotateZ(360deg)}
 }

@@ -24,7 +24,6 @@ function TetrisSideBar() {
                     {fromPieceToGrid(Tetris[nextPiece])}
                 </div>
             </div>
-            
         </div>
     )
 }

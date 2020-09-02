@@ -134,6 +134,7 @@ nav {
     transform: translate(-50%);
     width: 90%;
     max-width: 400px;
+    min-width: 350px;
     height: 300px;
     display: inline-block;
     background-color: black;
@@ -235,7 +236,7 @@ nav {
 
 .spaceKey {
     position: absolute;
-    top: 45%;
+    top: 58%;
     left: 41%;
     border: 1px solid #2375D8;
     border-radius: 15px;
@@ -298,6 +299,7 @@ input:focus, textarea:focus, select:focus{
     transform: translateX(-50%);
     display: inline-block;
     border: 2px solid #EBECF1;
+    background: black;
     height: 40px;
     border-radius: 30px;
     text-align: center;
@@ -319,7 +321,7 @@ input:focus, textarea:focus, select:focus{
 
 .chatButton {
     position: relative;
-    bottom: 3px;
+    bottom: 4px;
     cursor: pointer;
     color: #fff !important;
     text-transform: uppercase;

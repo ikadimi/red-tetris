@@ -106,8 +106,6 @@
     box-sizing: content-box;
     display: flex;
     flex-wrap: wrap;
-    /* width: 60px;
-    height: 80px; */
     margin: auto;
 }
 

@@ -58,7 +58,7 @@ export const newNotification = (payload) => {
     return function (dispatch, getState) {
         const name = getState().name
 
-        dispatch(myNotification(name + ': ' + payload))
+        // dispatch(myNotification(name + ': ' + payload))
         socket.emit('newNotification', name + ': ' + payload)
     }
 }

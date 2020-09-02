@@ -68,7 +68,7 @@ function NavbarComponent() {
             <button onClick={() => dispatch(openCloseSettings())} className={width < 500 ? "settingsPhoneButton" : "settingsButton"}>
                 <GiGamepadCross size={28} style={{color: '#2375D8'}}/>
             </button>
-            {chat ? <MiniChat /> : null}
+            {chat ? <MiniChat openChat={openChat}/> : null}
             {width < 500 ? <MobileController /> : null}
             {notification ? <Notification notification={notification} width={width}/> : null}
             {settings ? <Settings /> : null}
