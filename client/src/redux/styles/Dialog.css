@@ -17,7 +17,6 @@
     border-radius: 20px;
     border: 2px solid white;
     padding: 10px 20px;
-    /* border-width: 60px; */
 }
 
 .pauseButton p {
@@ -39,8 +38,6 @@
     height: 150px;
     border-radius: 50%;
     border: 5px solid #EBECF1;
-    /* background-image: url("../../../../icons/playBackground.jpg");
-    background-size: cover; */
     background-color: #2375D8;
     font-size: 2rem;
     color: #EBECF1;

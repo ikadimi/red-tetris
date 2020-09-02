@@ -3,7 +3,6 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    /* border: 5px solid  cadetblue; */
     margin: 30px auto;
     background-color: rgba(0,0,0,0.6);
     width: 200px;
@@ -85,7 +84,6 @@
 
 .wrapContainer {
     display: flex;
-    /* position: relative; */
     flex-flow: row nowrap;
     margin: auto;
     width: 350px;
@@ -95,9 +93,7 @@
     box-sizing: content-box;
     display: flex;
     flex-wrap: wrap;
-    /* border: 5px solid  cadetblue; */
     margin: auto;
-    /* background-color: rgba(0,0,0,0.8); */
     width: 150px;
     height: 400px;
 }
