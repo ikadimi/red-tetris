@@ -30,15 +30,13 @@ io.on('connect', (socket) => {
     const client = new Client(socket)
 
     socket.on('join', ({name, room}, callback) => {
-        if (!name)
-            callback({error: "Name is missing"})
+        if (!name || !room)
+            callback({error: "Name or Room is missing"})
         else {
             if (client.room) {
                 return client.restartGame() 
             }
             client.name = name
-            if (!room)
-                room = createId()
             activeRoom = rooms.get(room)
             if (!activeRoom)
                 activeRoom = createRoom(room)
