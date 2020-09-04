@@ -1,7 +1,6 @@
 .mobileController {
     position: absolute;
     display: flex;
-    background: transparent;
     border-radius: 20px;
     z-index: 2;
     bottom: 10px;
@@ -16,8 +15,7 @@
     height: 50px;
     width: 100px;
     border-radius: 15px;
-    border: 2px solid #72CB3B;
-    background: transparent;
+    border: 2px solid;
     cursor: pointer;
 }
 
@@ -26,11 +24,6 @@
     height: 100px;
     width: 100px;
     text-align: right;
-}
-
-.controllerButtons button {
-    background: transparent;
-    border: none;
 }
 
 .controllerButtons button:active {
@@ -45,7 +38,7 @@
     position: absolute;
     top: 0px;
     left: 35px;
-    border: 2px solid #f75990 !important;
+    border: 2px solid;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -54,7 +47,7 @@
     position: absolute;
     top: 35px;
     left: 0px;
-    border: 2px solid #CC99FF !important;
+    border: 2px solid ;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -63,7 +56,7 @@
     position: absolute;
     top: 35px;
     left: 70px;
-    border: 2px solid #FF971C !important;
+    border: 2px solid ;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -72,7 +65,7 @@
     position: absolute;
     top: 70px;
     left: 35px;
-    border: 2px solid #beef00 !important;
+    border: 2px solid; 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }

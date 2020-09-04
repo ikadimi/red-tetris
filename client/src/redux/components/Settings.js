@@ -4,26 +4,32 @@ import { Link } from 'react-router-dom'
 import { AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineArrowUp, AiOutlineArrowDown, AiOutlineHome, AiOutlineClose } from 'react-icons/ai'
 import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa'
 import { MdSpaceBar } from 'react-icons/md'
+import { GiGamepadCross } from 'react-icons/gi'
 import { leaveRoom } from '../actions/JoinActions'
 import { changeGameSounds, openCloseSettings } from '../actions/Sounds'
+import { showHideController } from '../actions/actions'
 
 function Settings() {
     const dispatch = useDispatch()
-    const volume = useSelector(state => state.volume)
-    const upStyle = {color: '#2375D8', position: 'absolute', top: '5', left: '35', border: '1px solid white', borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px'}
-    const leftStyle = {color: '#2375D8', position: 'absolute', top: '35', left: '0', border: '1px solid white', borderTopRightRadius: '10px', borderBottomRightRadius: '10px'}
-    const rightStyle = {color: '#2375D8', position: 'absolute', top: '35', left: '70', border: '1px solid white', borderBottomLeftRadius: '10px', borderTopLeftRadius: '10px'}
-    const downStyle = {color: '#2375D8', position: 'absolute', top: '70', left: '35', border: '1px solid white', borderTopLeftRadius: '10px', borderTopRightRadius: '10px'}
+    const {volume, light} = useSelector(state => state)
+    const upStyle = {position: 'absolute', top: '5', left: '35', border: '1px solid', borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px'}
+    const leftStyle = {position: 'absolute', top: '35', left: '0', border: '1px solid', borderTopRightRadius: '10px', borderBottomRightRadius: '10px'}
+    const rightStyle = {position: 'absolute', top: '35', left: '70', border: '1px solid', borderBottomLeftRadius: '10px', borderTopLeftRadius: '10px'}
+    const downStyle = {position: 'absolute', top: '70', left: '35', border: '1px solid', borderTopLeftRadius: '10px', borderTopRightRadius: '10px'}
 
     return (
-        <div className="settingDialog">
+        <div className="settingDialog" style={light ? {backgroundColor: "#78909C"} : {backgroundColor: "black"}}>
             <button onClick={() => dispatch(openCloseSettings())} className="closeSettings">
-                <AiOutlineClose style={{color: '#2375D8'}} size={30}/>
+                <AiOutlineClose size={30}/>
+            </button>
+
+            <button onClick={() => dispatch(showHideController())} className="controllerSettings">
+                <GiGamepadCross size={30}/>
             </button>
 
             <button onClick={() => dispatch(changeGameSounds(volume))} className="audioSettings">
-                {volume ? <FaVolumeUp style={{color: '#2375D8'}} size={30}/>
-                : <FaVolumeMute style={{color: '#2375D8'}} size={30}/>}
+                {volume ? <FaVolumeUp size={30}/>
+                : <FaVolumeMute size={30}/>}
             </button>
 
             <div className="keyList">
@@ -35,7 +41,7 @@ function Settings() {
             </div>
 
             <div className="spaceKey">
-                <MdSpaceBar style={{color: 'white'}} size={40}/>
+                <MdSpaceBar size={40}/>
             </div>
             
             <div className="movementButtons">

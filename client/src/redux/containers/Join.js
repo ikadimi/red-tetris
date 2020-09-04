@@ -1,15 +1,20 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { costumRoom } from '../actions/JoinActions'
 
 import '../styles/Join.css'
 
 function Join() {
     const [name, setName] = useState('')
     const [room, setRoom] = useState('')
-    const costum = useSelector(state => state.costum)
-    const dispatch = useDispatch()
+    const createId = (len = 6, chars = 'abcdefghjkmnopqrstwxyz0123456789') => 
+    {
+        let id = '';
+        while (len--)
+        {
+            id += chars[Math.random() * chars.length | 0];
+        }
+        return id
+    }
 
     return (
         <div className="joinOuterContainer">
@@ -17,10 +22,10 @@ function Join() {
                 <h1 className="heading">Join</h1>
                 <div><input placeholder="Name" maxLength={30} className="joinInput" type="text" onChange={(event) => setName(event.target.value)}/></div>
                 <div className="relativeInput">
-                    <input disabled={costum} placeholder="Room" maxLength={30} className="joinInput mt-20" type="text" onChange={(event) => setRoom(event.target.value)}/>
-                    <button className="randomRooms" onClick={() => dispatch(costumRoom())}>Costum</button>
+                    <input placeholder="Room" value={room} maxLength={30} className="joinInput mt-20" type="text" onChange={(event) => setRoom(event.target.value)}/>
+                    <button className="randomRooms" onClick={() => setRoom(createId())}>Costum</button>
                 </div>
-                <Link onClick={event => (!name || (!room && !costum)) ? event.preventDefault() : null} to={`/online/?room=${room}&name=${name}`}>
+                <Link onClick={event => (!name || !room ) ? event.preventDefault() : null} to={`/online/?room=${room}&name=${name}`}>
                     <button className="submitButton" type="submit">Start Game</button>
                 </Link>
             </div>

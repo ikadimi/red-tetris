@@ -1,9 +1,11 @@
 import React from 'react'
+import '../styles/Chat.css'
 
-function NotificationComponent({ notification, width }) {
+function NotificationComponent({ notification }) {
     return (
-        <div className={width < 500 ? 'activeMobileNotification' : 'activeNotification'}>
-            <p className="notificationContent">{notification}</p>
+        <div className='activeNotification'>
+            <p className="messageName">{notification.name}</p>
+            <p className="messageText">{notification.message}</p>
         </div>
     )
 }

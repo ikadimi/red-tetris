@@ -1,9 +1,10 @@
-import { GAME_LOST, START_GAME, SET_BOARD, ASSIGN_ADMIN, GAME_OVER, INITIATION_SUCCESS, PIECE_CHANGE, RESTART_GAME, UPDATE_SCORE, UPDATE_ROOM, JOIN_REQUEST, JOIN_FAILURE, JOIN_SUCCESS, COSTUM_ROOM, PUSH_NOTIFICATION, HIDE_ERROR_BOX, MUTE_UNMUTE_GAME, OPEN_CLOSE_SETTINGS, USER_OFF } from "../actions"
+import { GAME_LOST, START_GAME, SET_BOARD, ASSIGN_ADMIN, GAME_OVER, INITIATION_SUCCESS, PIECE_CHANGE, RESTART_GAME, UPDATE_SCORE, UPDATE_ROOM, JOIN_REQUEST, JOIN_FAILURE, JOIN_SUCCESS, PUSH_NOTIFICATION, HIDE_ERROR_BOX, MUTE_UNMUTE_GAME, OPEN_CLOSE_SETTINGS, USER_OFF, SHOW_HIDE_CONTROLLER, SET_MESSAGES, OPEN_CLOSE_CHAT, SWITCH_THEME } from "../actions"
 
 const initialState = {
     loading: true,
     error: '',
     notification: '',
+    messages: [],
     board: [],
     name: 'challenger',
     room: {
@@ -16,15 +17,37 @@ const initialState = {
     active: false,
     gameOver: false,
     admin: false,
-    costum: true,
     lost: false,
     settings: false,
-    volume: true
+    volume: true,
+    controller: false,
+    chat: false,
+    light: false,
 }
 
 const TetrisReducer = (state = initialState, {type, payload}) => {
     switch (type)
     {
+        case SWITCH_THEME:
+            return {
+                ...state,
+                light: !state.light
+            }
+        case OPEN_CLOSE_CHAT:
+            return  {
+                ...state,
+                chat: !state.chat
+            }
+        case SET_MESSAGES:
+            return {
+                ...state,
+                messages: [...state.messages, payload]
+            }
+        case SHOW_HIDE_CONTROLLER:
+            return {
+                ...state,
+                controller: !state.controller
+            }
         case USER_OFF:
             return {
                 ...state,
@@ -70,11 +93,6 @@ const TetrisReducer = (state = initialState, {type, payload}) => {
                 ...state,
                 lost: true,
                 active: false
-            }
-        case COSTUM_ROOM:
-            return {
-                ...state,
-                costum: !state.costum
             }
         case JOIN_SUCCESS:
             return {
@@ -126,7 +144,6 @@ const TetrisReducer = (state = initialState, {type, payload}) => {
                 ...state,
                 board: payload.board,
                 nextPiece: payload.piece,
-                loading: false
             }
         case GAME_OVER:
             return {

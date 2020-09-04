@@ -68,7 +68,7 @@ export const roomEventListeners = () => {
 
         socket.on('newAdmin', () => {
             dispatch(assignAdmin())
-            dispatch(myNotification('ROOM: You are the new Admin'))
+            dispatch(myNotification({name: 'ROOM', message: 'You are the new Admin'}))
         })
 
         socket.on('newNotification', (payload) => {
@@ -95,7 +95,7 @@ export const roomEventListeners = () => {
             const users = [...room.clients.keys()]
 
             if (!users.find(user => user === peer.id)) {
-                dispatch(myNotification(`ROOM: ${peer.name} has joined`))
+                dispatch(myNotification({name: 'ROOM', message: `${peer.name} has joined`}))
                 room.clients.set(peer.id, {board: createNewBoard(), peer})
                 dispatch(updateRoom({id: roomId, clients: room.clients}))
             }
@@ -106,7 +106,7 @@ export const roomEventListeners = () => {
             const users = [...room.clients.keys()]
 
             if (users.find(user => user === userId)) {
-                dispatch(myNotification(`ROOM: ${name} has left`))
+                dispatch(myNotification({name: 'ROOM', message: `${name} has left`}))
                 room.clients.delete(userId)
                 dispatch(updateRoom({id: roomId, clients: room.clients}))
             }

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { newNotification } from '../actions/actions'
 
+import '../styles/Chat.css'
+
 function MiniChat({ openChat }) {
     const [message, setMessage] = useState('')
     const dispatch = useDispatch()
@@ -23,7 +25,7 @@ function MiniChat({ openChat }) {
                 type="text"
                 placeholder="Type a message..."
                 value={message}
-                maxLength={30}
+                maxLength={40}
                 onChange={(event) => setMessage(event.target.value)}
                 onKeyPress={(event) => event.key === 'Enter' ? sendMessage(event) : null}
                 />

@@ -1,127 +1,54 @@
-nav {
+.chatButton {
     position: absolute;
+    background: transparent;
+    border: none;
     z-index: 3;
     top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
-    border: 2px solid #EBECF1;
-    border-radius: 30px;
-    animation: slide-in 1s ease-out;
-}
-
-.navList {
-    position: relative;
-    display: flex;
-    flex: 1 1 auto;
+    right: 15px;
     margin: 0;
-    padding: 0 30px;
-    list-style-type: none;
+    cursor: pointer 
 }
 
-.listElements button {
-    color: #2375D8;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
+.themeButton {
+    position: absolute;
     background: transparent;
-    text-transform: uppercase;
-    transition: color 0.2s;
-}
-
-.listElements {
-    border: 2px solid transparent;
-    border-radius: 5px;
-    padding: 10px;
-    transition: background 0.2s;
-}
-
-.listElements:hover {
-    background: #EC4138;
-    border: 2px solid #F05749;
-    border-right: 2px solid #E02A21;
-    border-bottom: 2px solid #E02A21;
-}
-
-.listElements button:hover {
-    color: #F9F8FD;
-}
-  
-@keyframes slide-in {
-    0% {
-        top: -50px;
-    }
-    40% {
-        top: 20px;
-    }
-    70% {
-        top: 10px;
-    }
-    100% {
-        top: 15px;
-    }
+    border: none;
+    z-index: 3;
+    top: 50px;
+    left: 15px;
+    margin: 0;
+    cursor: pointer 
 }
 
 /*  ------------notifications-----------  */
 
 .activeNotification {
     position: absolute;
+    display: flex;
+    justify-content: flex-end;
     z-index: 3;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #EBECF1;
-    background-color: black;
-    border: 2px solid #2375D8; 
+    top: 0px;
+    right: 60px;
+    padding: 0 5%;
+    max-width: 80%;
+    text-align: center;
+    border: 2px solid; 
     border-radius: 30px;
     animation: notification 1s ease-out;
 }
 
-.activeMobileNotification {
-    position: absolute;
-    z-index: 3;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #EBECF1;
-    background-color: black;
-    border: 2px solid #2375D8; 
-    border-radius: 30px;
-    animation: mobileNotification 1s ease-out; 
-}
-
-.notificationContent {
-    width: auto;
-    padding: 0px 50px ;
-}
-
-@keyframes mobileNotification {
-    0% {
-        left: -50px;
-    }
-    40% {
-        left: 52%;
-    }
-    70% {
-        left: 48%;
-    }
-    100% {
-        left: 50%;
-    }
-}
-
 @keyframes notification {
     0% {
-        bottom: -50px;
+        right: -50px;
     }
     40% {
-        bottom: 60px;
+        right: 70px;
     }
     70% {
-        bottom: 40px;
+        right: 50px;
     }
     100% {
-        bottom: 50px;
+        right: 60px;
     }
 }
 
@@ -137,8 +64,7 @@ nav {
     min-width: 350px;
     height: 300px;
     display: inline-block;
-    background-color: black;
-    border: 2px solid #EBECF1;
+    border: 2px solid;
     border-radius: 30px;
 }
 
@@ -148,20 +74,9 @@ nav {
     border: none;
     z-index: 3;
     top: 15px;
-    right: 15px;
+    left: 15px;
     margin: 0;
     cursor: pointer
-}
-
-.settingsPhoneButton {
-    position: absolute;
-    background: transparent;
-    border: none;
-    z-index: 3;
-    bottom: 5px;
-    left: 5px;
-    margin: 0;
-    cursor: pointer 
 }
 
 .closeSettings {
@@ -186,14 +101,24 @@ nav {
     cursor: pointer;
 }
 
+.controllerSettings {
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer; 
+}
+
 .navHomeButton {
     position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     box-shadow: none;
-    background-color: #EBECF1;
-    color: black;
     border-radius: 8px;
     padding: 10px 50px;
     cursor: pointer;
@@ -222,8 +147,7 @@ nav {
 
 .movementButtons p {
     position: absolute;
-    color: rgb(250, 52, 52);
-    border: 1px solid #EBECF1;
+    border: 1px solid;
     border-radius: 50%;
     width: 25px;
     height: 25px;
@@ -235,7 +159,7 @@ nav {
     position: absolute;
     top: 58%;
     left: 41%;
-    border: 1px solid #2375D8;
+    border: 1px solid;
     border-radius: 15px;
     padding: 0px 15px;
 }
@@ -273,70 +197,5 @@ nav {
     }
     100% {
         left: 10px;
-    }
-}
-
-/*  ------------CHAT----------- */
-
-input:focus, textarea:focus, select:focus{
-    outline: none;
-}
-
-.chatForm {
-    position: absolute;
-    z-index: 3;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
-    border: 2px solid #EBECF1;
-    background: black;
-    height: 40px;
-    border-radius: 30px;
-    text-align: center;
-    animation: pop-out 0.8s ease-out;
-}
-
-.chatInput {
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    margin: auto;
-    padding-top: 8px;
-    padding-left: 5px;
-    color: white;
-    border: none;
-    width: 80%;
-    font-size: 1.2em;
-}
-
-.chatButton {
-    position: relative;
-    bottom: 4px;
-    cursor: pointer;
-    color: #fff !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #2979FF;
-    border-radius: 30px;
-    display: inline-block;
-    border: none;
-    font-size: 0.5em;
-    height: 36px;
-    width: 20%;
-}
-
-@keyframes pop-out {
-    0% {
-        top: -50px;
-    }
-    40% {
-        top: 100px;
-    }
-    70% {
-        top: 70px;
-    }
-    100% {
-        top: 80px;
     }
 }

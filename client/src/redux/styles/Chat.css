@@ -1,0 +1,176 @@
+.sideIcons {
+    position: absolute;
+    z-index: 3;
+    top: 15px;
+    right: 305px;
+    width: 50px;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    display: inline-block;
+    border-radius: 30px;
+    animation: slide-in 1s ease-out;
+}
+
+.navList {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: column;
+    margin: 0;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.listElements button {
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.listElements {
+    border-radius: 50%;
+    text-align: center;
+    margin: 10px;
+}
+
+  
+@keyframes slide-in {
+    0% {
+        top: -50px;
+    }
+    40% {
+        top: 20px;
+    }
+    70% {
+        top: 10px;
+    }
+    100% {
+        top: 15px;
+    }
+}
+
+/* -----------chat ----------*/
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.chatLog {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 3;
+    width: 300px;
+    height: 200px;
+    border: 1px solid;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    flex: auto;
+}
+
+.messageContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 5%;
+    text-align: center;
+}
+
+.myMessageName {
+    background-color: skyblue !important;
+}
+
+.roomMessageName {
+    background-color: rgb(135, 235, 148) !important; 
+}
+
+.messageName {
+    background-color: rgb(235, 158, 135);
+    max-height: 1.6em;
+    border-radius: 30px;
+    width: auto;
+    color: black;
+    font-size: 0.8em;
+    padding: 2px 5px;
+}
+
+.messageText {
+    width: 80%;
+    letter-spacing: 0;
+    color: white;
+    padding: 2px 5px;
+    float: left;
+    font-size: 0.8em;
+    word-wrap: break-word;
+    text-transform: uppercase;
+}
+
+.chatForm {
+    width: 100%;
+    border: 2px solid #EBECF1;
+    background: black;
+    height: 40px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.chatInput {
+    border: none;
+    float: left;
+    border-radius: 0;
+    background: transparent;
+    margin: 0;
+    padding-top: 8px;
+    padding-left: 5px;
+    color: white;
+    border: none;
+    width: 215px;
+    font-size: 1.2em;
+}
+
+.sendButton {
+    float: right;
+    cursor: pointer;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #2979FF;
+    border-radius: 30px;
+    border: none;
+    font-size: 0.5em;
+    height: 36px;
+    width: 55px;
+}
+
+@keyframes pop-out {
+    0% {
+        top: -50px;
+    }
+    40% {
+        top: 100px;
+    }
+    70% {
+        top: 70px;
+    }
+    100% {
+        top: 80px;
+    }
+}
+
+.closeChat {
+    position: absolute;
+    right: 5px;
+    top: 210px;
+    z-index: 3;
+    cursor: pointer;
+    background: red;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 30px;
+    height: 20px;
+    width: 300px; 
+}

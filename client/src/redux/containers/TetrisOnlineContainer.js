@@ -40,7 +40,7 @@ function TetrisOnlineContainer({location}) {
             error ? <Error error={error}/> :
             <div>
                 <Navbar />
-                <div style={{display: 'flex', flexWrap: 'wrap', marginTop: '50px'}}>
+                <div className="gameContainer">
                     <TetrisContainer mode={'online'}/>
                     {clients.map((el, index) => (<TetrisEnemyContainer key={index} className="EnemyContainer" board={el.board} info={el.peer}/>))}
                 </div>

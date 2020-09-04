@@ -1,15 +1,9 @@
-import { COSTUM_ROOM, USER_OFF, JOIN_REQUEST, JOIN_FAILURE, JOIN_SUCCESS, } from "."
+import { USER_OFF, JOIN_REQUEST, JOIN_FAILURE, JOIN_SUCCESS, } from "."
 import socket from "../../socket"
-import history from '../../history'
 import { hideErrorBox } from "./ErrorActions"
 import { pauseBackgroundMusic } from "./Sounds"
 import { updateRoom } from './TetrisActions'
-
-export const costumRoom = () => {
-    return {
-        type: COSTUM_ROOM
-    }
-}
+import { myNotification } from "./GameState"
 
 const userOff = () => {
     return {
@@ -74,8 +68,7 @@ export const joinActionCreator = ({name, room}) => {
                     dispatch(updateRoom({id: roomId, clients}))
                 }
                 dispatch(joinSuccess({name, admin}))
-                if (!room)
-                    history.replace(`/online/?room=${roomId}&name=${name}`)
+                dispatch(myNotification({name: 'ROOM', message: `Welcom to room ${roomId}`}))
             }
             else
                 dispatch(joinFailure("Something Went Wrong"))

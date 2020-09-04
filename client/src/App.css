@@ -1,6 +1,31 @@
 body {
-    background-color: #1A1A1D;
+    --accent-color: #000000;
+    --background-color: #DEE4E7;
+    --text-color: #1A1A1D;
+    --border-color: var(--text-color);
+    --button-text-color: var(--background-color);
+    --transition-delay: 1s;
+
+    align-content: center;
     margin: 0;
     padding: 0;
-    align-content: center;
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: var(--text-color)
+}
+
+body.dark {
+    --accent-color: #2979FF;
+    --background-color: #1A1A1D;
+    --text-color: #fff;
+}
+
+button svg {
+    color: var(--accent-color)
+}
+
+button {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: var(--text-color) 
 }

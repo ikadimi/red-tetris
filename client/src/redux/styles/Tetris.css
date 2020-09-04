@@ -1,17 +1,22 @@
+.gameContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
 .grid_container {
     box-sizing: content-box;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     margin: 30px auto;
-    background-color: rgba(0,0,0,0.6);
     width: 200px;
     height: 400px;
 }
 
 .heroContainer {
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%);
+    /* background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%); */
 }
 
 .gridEl {
@@ -19,7 +24,7 @@
     width: 20px;
     height: 20px;
     border-radius: 3px;
-    border: 0.2px solid white;  
+    border: 0.2px solid #DEE4E7;
 }
 
 .style_moving {
@@ -72,12 +77,11 @@
     left: -2px;
     width: 80px;
     height: 20px;
-    background-color: black;
     border-radius: 8px;
-    border: solid 0.5px#00FFFF;
+    border: solid 0.5p;
     text-align: center;
     transform: rotate(-30deg);
-    color: white;
+    background-color: goldenrod;
 }
 
 /* -------side-Container---------------- */
@@ -112,7 +116,7 @@
     width: 20px;
     height: 20px;
     border-radius: 3px;
-    border: 0.2px solid white; 
+    border: 0.2px solid; 
 }
 
 .infoContainer, .myInfoContainer {
@@ -125,9 +129,8 @@
     font-size: 0.7rem;
     margin-top: auto;
     letter-spacing: 0.1rem;
-    color: white;
     padding-bottom: 2px;
-    border-bottom: solid white; 
+    border-bottom: solid; 
 }
 
 .infoContainer p {
@@ -136,5 +139,5 @@
     letter-spacing: 0.1rem;
     color: rgb(241, 94, 94);
     padding-bottom: 2px;
-    border-bottom: solid white;
+    border-bottom: solid;
 }

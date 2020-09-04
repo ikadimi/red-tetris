@@ -9,9 +9,8 @@ export const JOIN_REQUEST = 'JOIN_REQUEST'
 export const JOIN_FAILURE = 'JOIN_FAILURE'
 export const JOIN_SUCCESS = 'JOIN_SUCCESS'
 
-export const COSTUM_ROOM = 'COSTUM_ROOM'
-
 export const HIDE_ERROR_BOX = 'HIDE_ERROR_BOX'
+export const SWITCH_THEME = 'SWITCH_THEME'
 
 /* --------- TETRIS ACTIONS -------- */
 
@@ -31,6 +30,8 @@ export const PUSH_NOTIFICATION = 'PUSH_NOTIFICATION'
 export const MUTE_UNMUTE_GAME = 'MUTE_UNMUTE_GAME'
 export const OPEN_CLOSE_SETTINGS = 'OPEN_CLOSE_SETTINGS'
 export const USER_OFF = 'USER_OFF'
+export const SHOW_HIDE_CONTROLLER = 'SHOW_HIDE_CONTROLLER'
+export const OPEN_CLOSE_CHAT = 'OPEN_CLOSE_CHAT'
 
 /* ----------- TETRIS MOVEMENTS --------- */
 
