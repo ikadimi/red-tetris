@@ -18,7 +18,7 @@ function GameOverComponent() {
                     <p>LINES {lineCleared}</p>
                 </div>
                 <div className="buttonContainer">
-                    {admin && gameOver ? <button className="restartButton" onClick={() => dispatch(startGame(false))}>ANOTHER ONE</button>
+                    {admin && gameOver ? <button className="restartButton" onClick={() => dispatch(startGame(false))}>PLAY AGAIN</button>
                     : admin ? <p className="restartButton"> Please Wait for the game to End</p> :
                     <p className="restartButton">Please Wait for room admin to restart the game</p> }
                 </div>

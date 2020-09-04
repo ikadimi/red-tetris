@@ -10,7 +10,7 @@ import { joinActionCreator, joinFailure, roomEventListeners, leaveRoom } from '.
 
 function TetrisOnlineContainer({location}) {
     const dispatch = useDispatch()
-    const {room, error, loading} = useSelector(state => state)
+    const {room, error, light, loading} = useSelector(state => state)
     const clients = [...room.clients.values()]
     
     useEffect(() => {
@@ -42,7 +42,7 @@ function TetrisOnlineContainer({location}) {
                 <Navbar />
                 <div className="gameContainer">
                     <TetrisContainer mode={'online'}/>
-                    {clients.map((el, index) => (<TetrisEnemyContainer key={index} className="EnemyContainer" board={el.board} info={el.peer}/>))}
+                    {clients.map((el, index) => (<TetrisEnemyContainer key={index} className="EnemyContainer" board={el.board} info={el.peer} light={light}/>))}
                 </div>
             </div>
             }

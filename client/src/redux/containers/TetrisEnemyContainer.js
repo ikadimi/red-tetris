@@ -3,7 +3,7 @@ import EnemySideBar from '../components/TetrisEnemySideBar'
 import '../styles/Tetris.css'
 
 
-function TetrisEnemyContainer({ board, info }) {
+function TetrisEnemyContainer({ board, info, light }) {
     const fromBoardToGrid = (board) => {
         let displayBoard = []
     
@@ -22,7 +22,7 @@ function TetrisEnemyContainer({ board, info }) {
 
     return (
         <div className="wrapContainer">
-            <div className="grid_container">
+            <div className="grid_container" style={light ? {backgroundColor: '#78909C'} : null}>
                 {info.admin ? <div className="adminBadge">ADMIN</div> : null}
                 {fromBoardToGrid(board)}
             </div>

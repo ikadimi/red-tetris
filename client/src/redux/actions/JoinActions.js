@@ -1,10 +1,6 @@
 import { USER_OFF, JOIN_REQUEST, JOIN_FAILURE, JOIN_SUCCESS, } from "."
 import socket from "../../socket"
-import { hideErrorBox } from "./ErrorActions"
-import { pauseBackgroundMusic } from "./Sounds"
-import { updateRoom } from './TetrisActions'
-import { myNotification } from "./GameState"
-
+import { hideErrorBox, resetMessages, pauseBackgroundMusic, updateRoom, myNotification } from "./actions"
 const userOff = () => {
     return {
         type: USER_OFF
@@ -16,6 +12,7 @@ export const leaveRoom = () => {
         socket.disconnect()
         socket.off()
         pauseBackgroundMusic()
+        dispatch(resetMessages([]))
         dispatch(hideErrorBox())
         dispatch(userOff())
     }

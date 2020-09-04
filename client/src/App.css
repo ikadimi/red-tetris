@@ -11,7 +11,8 @@ body {
     padding: 0;
     background-color: var(--background-color);
     border-color: var(--border-color);
-    color: var(--text-color)
+    color: var(--text-color);
+    transition: 1s;
 }
 
 body.dark {

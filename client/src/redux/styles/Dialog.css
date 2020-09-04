@@ -37,12 +37,15 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 5px solid #EBECF1;
-    background-color: #2375D8;
+    border: 5px solid ;
     font-size: 2rem;
-    color: #EBECF1;
     cursor: pointer;
     font-weight: bold;
+}
+
+.startButton:hover {
+    background-color: #488485;
+    color: white
 }
 
 .startButton:active {

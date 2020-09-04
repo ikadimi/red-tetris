@@ -22,13 +22,11 @@
 }
 
 .listElements button {
-    color: rgb(240, 240, 240);
     text-decoration: none;
     border: none;
     cursor: pointer;
     background: transparent;
     text-transform: uppercase;
-    transition: color 0.2s;
 }
 
 .listElements {
@@ -159,18 +157,4 @@ input:focus, textarea:focus, select:focus{
     100% {
         top: 80px;
     }
-}
-
-.closeChat {
-    position: absolute;
-    right: 5px;
-    top: 210px;
-    z-index: 3;
-    cursor: pointer;
-    background: red;
-    border: 1px solid white;
-    text-align: center;
-    border-radius: 30px;
-    height: 20px;
-    width: 300px; 
 }
