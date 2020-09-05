@@ -20,9 +20,7 @@
     width: 20px;
     height: 20px;
     border-radius: 3px;
-    border-width: 0.2px;
-    border-style: solid;
-    border-color: #DEE4E7;
+    border: 0.2px solid;
 }
 
 .style_moving {
@@ -30,7 +28,7 @@
 }
 
 .style_v {
-    border: solid #FF0000;
+    border-color: #FF0000;
 }
 
 .style_9 {
@@ -38,7 +36,7 @@
 }
 
 .style_0 {
-    background-color: none;
+    background-color: transparent;
 }
 
 .style_1 {
@@ -76,7 +74,7 @@
     width: 80px;
     height: 20px;
     border-radius: 8px;
-    border: solid 0.5p;
+    border: solid 0.5px;
     text-align: center;
     transform: rotate(-30deg);
     background-color: goldenrod;
