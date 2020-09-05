@@ -1,6 +1,7 @@
 import { USER_OFF, JOIN_REQUEST, JOIN_FAILURE, JOIN_SUCCESS, } from "."
 import socket from "../../socket"
-import { hideErrorBox, resetMessages, pauseBackgroundMusic, updateRoom, myNotification } from "./actions"
+import { hideErrorBox, pauseBackgroundMusic, updateRoom, myNotification } from "./actions"
+
 const userOff = () => {
     return {
         type: USER_OFF
@@ -12,7 +13,6 @@ export const leaveRoom = () => {
         socket.disconnect()
         socket.off()
         pauseBackgroundMusic()
-        dispatch(resetMessages([]))
         dispatch(hideErrorBox())
         dispatch(userOff())
     }

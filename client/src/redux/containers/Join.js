@@ -26,7 +26,7 @@ function Join() {
                     <button className="randomRooms" onClick={() => setRoom(createId())}>Costum</button>
                 </div>
                 <Link onClick={event => (!name || !room ) ? event.preventDefault() : null} to={`/online/?room=${room}&name=${name}`}>
-                    <button className="submitButton" type="submit">Start Game</button>
+                    <button className="submitButton" type="submit">JOIN ROOM</button>
                 </Link>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { START_GAME, GAME_LOST, ASSIGN_ADMIN, GAME_OVER, PUSH_NOTIFICATION, SHOW_HIDE_CONTROLLER, SET_MESSAGES, OPEN_CLOSE_CHAT, SWITCH_THEME, RESET_MESSAGES } from '.'
+import { START_GAME, GAME_LOST, ASSIGN_ADMIN, GAME_OVER, PUSH_NOTIFICATION, SHOW_HIDE_CONTROLLER, SET_MESSAGES, OPEN_CLOSE_CHAT, SWITCH_THEME } from '.'
 import socket from "../../socket"
 import { playBackgroundMusic } from './actions'
 
@@ -53,12 +53,6 @@ const pushNotification = (payload) => {
     return {
         type: PUSH_NOTIFICATION,
         payload
-    }
-}
-
-export const resetMessages = () => {
-    return {
-        type: RESET_MESSAGES
     }
 }
 

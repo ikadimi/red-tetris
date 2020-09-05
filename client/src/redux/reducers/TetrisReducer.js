@@ -1,4 +1,4 @@
-import { GAME_LOST, START_GAME, SET_BOARD, ASSIGN_ADMIN, GAME_OVER, INITIATION_SUCCESS, PIECE_CHANGE, RESTART_GAME, UPDATE_SCORE, UPDATE_ROOM, JOIN_REQUEST, JOIN_FAILURE, JOIN_SUCCESS, PUSH_NOTIFICATION, HIDE_ERROR_BOX, MUTE_UNMUTE_GAME, OPEN_CLOSE_SETTINGS, USER_OFF, SHOW_HIDE_CONTROLLER, SET_MESSAGES, OPEN_CLOSE_CHAT, SWITCH_THEME, RESET_MESSAGES } from "../actions"
+import { GAME_LOST, START_GAME, SET_BOARD, ASSIGN_ADMIN, GAME_OVER, INITIATION_SUCCESS, PIECE_CHANGE, RESTART_GAME, UPDATE_SCORE, UPDATE_ROOM, JOIN_REQUEST, JOIN_FAILURE, JOIN_SUCCESS, PUSH_NOTIFICATION, HIDE_ERROR_BOX, MUTE_UNMUTE_GAME, OPEN_CLOSE_SETTINGS, USER_OFF, SHOW_HIDE_CONTROLLER, SET_MESSAGES, OPEN_CLOSE_CHAT, SWITCH_THEME } from "../actions"
 
 const initialState = {
     loading: true,
@@ -28,11 +28,6 @@ const initialState = {
 const TetrisReducer = (state = initialState, {type, payload}) => {
     switch (type)
     {
-        case RESET_MESSAGES:
-            return {
-                ...state,
-                messages: []
-            }
         case SWITCH_THEME:
             return {
                 ...state,
@@ -60,6 +55,10 @@ const TetrisReducer = (state = initialState, {type, payload}) => {
                 gameOver: false,
                 lost: false,
                 settings: false,
+                messages: [],
+                score: 0,
+                nextPiece: 1,
+                lineCleared: 0,
             }
         case OPEN_CLOSE_SETTINGS:
             return {

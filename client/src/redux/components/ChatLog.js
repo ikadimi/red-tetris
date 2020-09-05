@@ -89,7 +89,7 @@ function ChatLog() {
                 </div>
             </div>
             <button onClick={() => dispatch(openCloseChat())} className="chatButton">
-                <FiMinimize2 size={28}/>
+                <FiMinimize2 style={{color: 'white'}} size={28}/>
             </button>
         </div>
     )
