@@ -5,5 +5,4 @@ const socket = io(ENDPOINT, {
     pingTimeout: 30000
 })
 
-
 export default socket

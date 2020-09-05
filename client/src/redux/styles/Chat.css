@@ -4,8 +4,6 @@
     top: 15px;
     right: 305px;
     width: 50px;
-    /* left: 50%;
-    transform: translateX(-50%); */
     display: inline-block;
     border-radius: 30px;
     animation: slide-in 1s ease-out;
@@ -25,12 +23,16 @@
     text-decoration: none;
     border: none;
     cursor: pointer;
-    background: transparent;
+    border-radius: 25px;
+    background: rgba(247, 247, 247, 1);
     text-transform: uppercase;
 }
 
+.listElements button svg {
+    color: black !important;
+}
+
 .listElements {
-    border-radius: 50%;
     text-align: center;
     margin: 10px;
 }
