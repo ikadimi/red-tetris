@@ -88,7 +88,7 @@ function TetrisContainer() {
         <div className="wrapContainer">
             {gameOver ? <GameOverContainer /> : null}
             {!active && !gameOver ? <Start admin={admin}/> : null}
-            <div className="grid_container heroContainer" style={light ? {backgroundColor: '#78909C'} : null}>
+            <div className="grid_container" style={light ? {backgroundColor: '#78909C'} : null}>
                 {admin ? <div className="adminBadge">ADMIN</div> : null}
                 {fromBoardToGrid(board)}
             </div>

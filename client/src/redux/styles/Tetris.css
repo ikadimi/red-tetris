@@ -14,17 +14,12 @@
     height: 400px;
 }
 
-.heroContainer {
-    /* background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%); */
-}
-
 .gridEl {
     box-sizing: border-box;
     width: 20px;
     height: 20px;
     border-radius: 3px;
-    border: 0.2px solid #DEE4E7;
+    border: 0.2px solid #DEE4E7 !important;
 }
 
 .style_moving {
