@@ -75,9 +75,9 @@ function TetrisContainer() {
             for (let i = 0; i < board.length; i++) {
                 for (let j = 0; j < board[i].length; j++) {
                     if (parseInt(board[i][j]) < 0)
-                        displayBoard.push(<div key={(i * 10) + j} className={'gridEl style_moving'}></div>)
+                        displayBoard.push(<div key={(i * 10) + j} style={{border: '0.2px solid #DEE4E7'}} className={'gridEl style_moving'}></div>)
                     else
-                        displayBoard.push(<div key={(i * 10) + j} className={'gridEl style_' + board[i][j]}></div>)
+                        displayBoard.push(<div key={(i * 10) + j} style={{border: '0.2px solid #DEE4E7'}} className={'gridEl style_' + board[i][j]}></div>)
                 }
             }
         }
