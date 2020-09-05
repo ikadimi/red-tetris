@@ -15,16 +15,14 @@
     height: 400px;
 }
 
-.grid_container div {
-    border: 0.2px solid #DEE4E7 !important;
-}
-
 .gridEl {
     box-sizing: border-box;
     width: 20px;
     height: 20px;
     border-radius: 3px;
-    border: 0.2px solid #DEE4E7 !important;
+    border-width: 0.2px;
+    border-style: solid;
+    border-color: #DEE4E7;
 }
 
 .style_moving {
