@@ -160,10 +160,10 @@ export const userInput = (key) => {
         if (active) {
             socket.emit("userInput", key, (newBoard) => {
                 if (newBoard) {
-                    if (key === 'space')
-                        playBeepSound()
-                    else
+                    if (key === 'left' || key === 'right' || key === 'up')
                         playMiniBeepSound()
+                    else if (key === 'space')
+                        playBeepSound()
                     dispatch(setBoard(newBoard))
                 }
             })
