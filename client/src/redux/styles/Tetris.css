@@ -9,9 +9,14 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    background-color: #1b2124;
     margin: 30px auto;
     width: 200px;
     height: 400px;
+}
+
+.grid_container div {
+    border: 0.2px solid #DEE4E7 !important;
 }
 
 .gridEl {
