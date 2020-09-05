@@ -7,8 +7,6 @@ const {createId, getInfo} = require('./helperFunctions')
 const http = require('http')
 const cors = require('cors')
 
-// const {addUser, removeUser, getUser, getUsersInRoom} = require('./users')
-
 const PORT = process.env.PORT || 5000
 const router = require('./router')
 

@@ -20,4 +20,23 @@ const getInfo = (client) => {
     }
 }
 
-module.exports = {createId, getInfo}
+const shuffle = (arr) => {
+    let n
+    let tmp
+
+    for (let i = arr.length - 1; i > 0; i--)
+    {  
+        n = Math.floor(Math.random() * (i + 1))
+        tmp = arr[i]
+        arr[i] = arr[n]
+        arr[n] = tmp
+    }
+}
+
+const soloPieces = () => {
+    let pieceOrder = [0, 1, 2, 3, 4, 5, 6]
+    this.shuffle(pieceOrder)
+    return pieceOrder 
+}
+
+module.exports = {createId, getInfo, soloPieces}

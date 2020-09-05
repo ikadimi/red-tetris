@@ -1,5 +1,6 @@
 const Tetris = require('./tetris').Tetris
 const Board = require('./board')
+const { soloPieces } = require('./helperFunctions')
 
 class Client {
     constructor(socket, name)
@@ -19,10 +20,18 @@ class Client {
         this.lost = false
     }
 
+    assignPieces()
+    {
+        if (this.room)
+            this.pieces = this.room.pieces.nextPiece(this.id)
+        else
+            this.pieces = soloPieces() 
+    }
+
     initialiseClient()
     {
         this.board = new Board(10, 20)
-        this.pieces = this.room.pieces.nextPiece(this.id)
+        this.assignPieces()
         this.currentPiece = this.pieces[0]
     }
 
@@ -61,7 +70,7 @@ class Client {
     restartGame()
     {
         this.board.clearBoard()
-        this.pieces = this.room.pieces.nextPiece(this.id)
+        this.assignPieces()
         this.pieceOrder = 0
         this.currentPiece = this.pieces[0]
         this.score = 0
@@ -69,7 +78,8 @@ class Client {
         this.offset = {x: 4, y: 0, r: 0, leftOut: 0}
         this.socket.emit('pieceChange', this.pieces[this.pieceOrder + 1])
         this.socket.emit('updateScore', {score: 0, lineCleared: 0})
-        this.socket.broadcast.to(this.room.id).emit('infoUpdated', {info: this.getInfo()})
+        if (this.room)
+            this.socket.broadcast.to(this.room.id).emit('infoUpdated', {info: this.getInfo()})
     }
 
     gameOver()
@@ -85,6 +95,8 @@ class Client {
                 this.socket.broadcast.to(this.room.id).emit('gameOver')
             }
         }
+        else
+            this.socket.emit('gameOver') 
     }
 
     resetOffset()
@@ -123,10 +135,11 @@ class Client {
             }
             else {
                 this.currentPiece = this.pieces[6]
-                this.pieces = this.room.pieces.nextPiece(this.id)
+                this.assignPieces()
                 this.pieceOrder = -1
             }
-            this.socket.broadcast.to(this.room.id).emit('infoUpdated', {info: this.getInfo()}) 
+            if (this.room)
+                this.socket.broadcast.to(this.room.id).emit('infoUpdated', {info: this.getInfo()}) 
             this.socket.emit('pieceChange', this.pieces[this.pieceOrder + 1])
             this.offset.x = 4; this.offset.y = 0; this.offset.r = 0
             if (!this.board.detecteCollision(Tetris[this.currentPiece][this.offset.r], {x: 4, y: 1, leftOut: this.offset.leftOut}))
@@ -140,9 +153,8 @@ class Client {
         this.dropVisualisation()
         this.board.moveTetris(piece, this.offset)
         const board = this.board.getBoard()
-        if (this.room) {
+        if (this.room)
             this.socket.broadcast.to(this.room.id).emit('boardUpdated', {roomId: this.room.id, id: this.id, board})
-        }
         return board
     }
 
