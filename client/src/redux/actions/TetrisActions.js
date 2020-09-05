@@ -188,7 +188,7 @@ export const fromPieceToGrid = (piece) => {
                 if ((piece.shape[i][j]) === '0')
                     displayBoard.push(<div key={(i * 10) + j} style={{opacity: 0}} className='nextPiece'></div>) 
                 else
-                    displayBoard.push(<div key={(i * 10) + j} style={{backgroundColor: piece.color}} className={'nextPiece'}></div>)
+                    displayBoard.push(<div key={(i * 10) + j} style={{backgroundColor: piece.color}} className='nextPiece'></div>)
             }
         }
     }

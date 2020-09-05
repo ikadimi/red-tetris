@@ -19,8 +19,8 @@
     box-sizing: border-box;
     width: 20px;
     height: 20px;
-    border-radius: 10px;
-    border: 2px solid #DEE4E7 !important;
+    border-radius: 5px;
+    border: 1px solid #DEE4E7;
 }
 
 .style_moving {
@@ -28,7 +28,7 @@
 }
 
 .style_v {
-    border-color: #FF0000;
+    border-color: #FF0000 !important;
 }
 
 .style_9 {
@@ -111,7 +111,7 @@
     box-sizing: border-box;
     width: 20px;
     height: 20px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 0.2px solid; 
 }
 
