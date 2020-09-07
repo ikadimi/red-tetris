@@ -48,8 +48,8 @@ html, body {
     width: 100%;
 }
 
-button:focus {
-  outline: 0;
+input:focus, textarea:focus, select:focus, button:focus{
+  outline: none;
 }
 
 .mt-20 {

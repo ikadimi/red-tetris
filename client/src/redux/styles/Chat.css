@@ -114,6 +114,7 @@ input:focus, textarea:focus, select:focus{
     border: 2px solid #EBECF1;
     background: black;
     height: 40px;
+    margin-top: 1px;
     border-radius: 30px;
     text-align: center;
 }

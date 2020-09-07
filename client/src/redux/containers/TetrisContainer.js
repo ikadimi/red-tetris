@@ -9,7 +9,7 @@ import '../styles/Tetris.css'
 
 function TetrisContainer() {
     const dispatch = useDispatch()
-    const {board, gameOver, loading, admin, active, light} = useSelector(state => state)
+    const {board, lost, gameOver, loading, admin, active, light, dropTime} = useSelector(state => state)
     let oldTimeStamp = 0
     let timeDiff = 0
     const requestRef = useRef()
@@ -18,7 +18,7 @@ function TetrisContainer() {
         timeDiff += (timeStamp - oldTimeStamp) / 1000
         oldTimeStamp = timeStamp
 
-        if (timeDiff >= 1)
+        if (timeDiff >= dropTime)
         {
             dispatch(userInput('down'))
             timeDiff = 0
@@ -86,8 +86,8 @@ function TetrisContainer() {
 
     return (
         <div className="wrapContainer">
-            {gameOver ? <GameOverContainer /> : null}
-            {!active && !gameOver ? <Start admin={admin}/> : null}
+            {lost || gameOver ? <GameOverContainer /> : null}
+            {!active && !gameOver && !lost ? <Start admin={admin} dropTime={dropTime}/> : null}
             <div className="grid_container" style={light ? {backgroundColor: '#78909C'} : null}>
                 {admin ? <div className="adminBadge">ADMIN</div> : null}
                 {fromBoardToGrid(board)}

@@ -32,6 +32,7 @@ export const OPEN_CLOSE_SETTINGS = 'OPEN_CLOSE_SETTINGS'
 export const USER_OFF = 'USER_OFF'
 export const SHOW_HIDE_CONTROLLER = 'SHOW_HIDE_CONTROLLER'
 export const OPEN_CLOSE_CHAT = 'OPEN_CLOSE_CHAT'
+export const GAME_SPEED = 'GAME_SPEED'
 
 /* ----------- TETRIS MOVEMENTS --------- */
 

@@ -3,6 +3,7 @@ import React from 'react'
 import socket from "../../socket"
 import { createNewBoard, joinFailure } from './JoinActions'
 import {gameOver, gameLost, gameOn, assignAdmin, myNotification, pauseBackgroundMusic, playMiniBeepSound, playBeepSound, playBackgroundMusic} from './actions'
+import { gameSpeed } from "./GameState"
 
 export const setBoard = (payload) => {
     return {
@@ -75,13 +76,15 @@ export const roomEventListeners = () => {
             dispatch(myNotification(payload))
         })
 
-        socket.on('gameOn', () => {
+        socket.on('gameOn', (speed) => {
+            dispatch(gameSpeed(speed))
             dispatch(gameOn())
             playBackgroundMusic()
         })
 
-        socket.on('restartGame', () => {
+        socket.on('restartGame', (speed) => {
             socket.emit('restartGame')
+            dispatch(gameSpeed(speed))
             dispatch(gameOn())
         })
 

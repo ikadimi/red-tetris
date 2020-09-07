@@ -1,4 +1,4 @@
-import { GAME_LOST, START_GAME, SET_BOARD, ASSIGN_ADMIN, GAME_OVER, INITIATION_SUCCESS, PIECE_CHANGE, RESTART_GAME, UPDATE_SCORE, UPDATE_ROOM, JOIN_REQUEST, JOIN_FAILURE, JOIN_SUCCESS, PUSH_NOTIFICATION, HIDE_ERROR_BOX, MUTE_UNMUTE_GAME, OPEN_CLOSE_SETTINGS, USER_OFF, SHOW_HIDE_CONTROLLER, SET_MESSAGES, OPEN_CLOSE_CHAT, SWITCH_THEME } from "../actions"
+import { GAME_LOST, START_GAME, SET_BOARD, ASSIGN_ADMIN, GAME_OVER, INITIATION_SUCCESS, PIECE_CHANGE, RESTART_GAME, UPDATE_SCORE, UPDATE_ROOM, JOIN_REQUEST, JOIN_FAILURE, JOIN_SUCCESS, PUSH_NOTIFICATION, HIDE_ERROR_BOX, MUTE_UNMUTE_GAME, OPEN_CLOSE_SETTINGS, USER_OFF, SHOW_HIDE_CONTROLLER, SET_MESSAGES, OPEN_CLOSE_CHAT, SWITCH_THEME, GAME_SPEED } from "../actions"
 
 const initialState = {
     loading: true,
@@ -11,6 +11,7 @@ const initialState = {
         id: '',
         clients: new Map()
     },
+    dropTime: 1,
     score: 0,
     nextPiece: 1,
     lineCleared: 0,
@@ -28,6 +29,11 @@ const initialState = {
 const TetrisReducer = (state = initialState, {type, payload}) => {
     switch (type)
     {
+        case GAME_SPEED:
+            return {
+                ...state,
+                dropTime: payload
+            }
         case SWITCH_THEME:
             return {
                 ...state,

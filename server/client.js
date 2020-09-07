@@ -78,8 +78,10 @@ class Client {
         this.offset = {x: 4, y: 0, r: 0, leftOut: 0}
         this.socket.emit('pieceChange', this.pieces[this.pieceOrder + 1])
         this.socket.emit('updateScore', {score: 0, lineCleared: 0})
-        if (this.room)
+        if (this.room) {
+            this.room.restartRoom()
             this.socket.broadcast.to(this.room.id).emit('infoUpdated', {info: this.getInfo()})
+        }
     }
 
     gameOver()
@@ -87,9 +89,9 @@ class Client {
         if (this.room) {
             this.socket.emit('gameLost')
             this.lost = true
-            this.room.losers += 1
-            if ((this.room.losers >= this.room.clients.size) ||
-                ((this.room.losers + 1) === this.room.clients.size)) {
+            let losers = this.room.playerLost()
+            if ((losers >= this.room.clients.size) ||
+                ((losers + 1) === this.room.clients.size)) {
                 this.room.active = false
                 this.socket.emit('gameOver')
                 this.socket.broadcast.to(this.room.id).emit('gameOver')

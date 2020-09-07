@@ -1,9 +1,10 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { startGame } from '../actions/actions'
+import GameSpeed from './GameSpeed'
 
 function GameOverComponent() {
-    const {name, score, lineCleared, admin, gameOver, lost} = useSelector(state => state)
+    const {name, score, lineCleared, admin, gameOver, lost, dropTime} = useSelector(state => state)
     const dispatch = useDispatch()
 
     return (
@@ -18,10 +19,13 @@ function GameOverComponent() {
                     <p>LINES {lineCleared}</p>
                 </div>
                 <div className="buttonContainer">
-                    {admin && gameOver ? <button className="restartButton" onClick={() => dispatch(startGame(false))}>PLAY AGAIN</button>
-                    : admin ? <p className="restartButton"> Please Wait for the game to End</p> :
+                    {admin && gameOver ? <button className="restartButton" onClick={() => dispatch(startGame(false, dropTime))}>PLAY AGAIN</button>
+                    : lost && !gameOver ? <p className="restartButton"> Please Wait for the game to End</p> :
                     <p className="restartButton">Please Wait for room admin to restart the game</p> }
                 </div>
+                {admin ? <div className="buttonContainer mt-20">
+                    <GameSpeed />
+                </div> : null}
             </div>
         </div>
     )

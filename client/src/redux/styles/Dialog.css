@@ -12,7 +12,7 @@
 .pauseButton{
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 150px;
     transform: translate(-50%);
     border-radius: 20px;
     border: 2px solid white;
@@ -32,7 +32,7 @@
 .startButton{
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 150px;
     transform: translate(-50%);
     width: 150px;
     height: 150px;
@@ -98,7 +98,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     border: solid 2px #595959;
     border-radius: 8px;
-    padding: 60px 40px;
+    padding: 20px 40px;
     transform: translateY(0px);
     animation-name: gameOver;
     animation-duration: 1s;
@@ -130,4 +130,53 @@
 @keyframes loading {
     from {transform: rotateZ(0deg)}
     to {transform: rotateZ(360deg)}
+}
+
+/* ------------GAMEMODE---------- */
+
+.gameMode {
+    position: absolute;
+    display: flex;
+    z-index: 3;
+    top: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.speedMode {
+    display: flex;
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 0px;
+    list-style-type: none;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+
+.speedChoices {
+    text-align: center;
+    margin: 10px;
+    padding: 2px 5px;
+}
+
+.speedChoices button {
+    border-radius: 10px;
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: white
+}
+
+.choosenSpeed {
+    background-color: rgb(235, 158, 135) !important;
+    color: black;
+}
+
+.speedChoices button:hover {
+    background-color: rgb(135, 235, 148);
+    color: black;
 }

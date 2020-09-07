@@ -34,6 +34,17 @@ class Room {
         })
     }
 
+    playerLost()
+    {
+        this.losers += 1
+        return this.losers
+    }
+
+    restartRoom()
+    {
+        this.losers = 0
+    }
+
     leave(client)
     {
         this.clients.delete(client);

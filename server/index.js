@@ -64,15 +64,15 @@ io.on('connect', (socket) => {
             callback(client.freezLines(lines))
     })
 
-    socket.on('gameOn', (first) => {
+    socket.on('gameOn', ({first, speed}) => {
         if (client.room) {
             client.room.active = true
             if (first)
-                socket.broadcast.to(client.room.id).emit('gameOn')
+                socket.broadcast.to(client.room.id).emit('gameOn', speed)
             else {
                 client.room.pieces.restartStack()
                 client.restartGame()
-                socket.broadcast.to(client.room.id).emit('restartGame')
+                socket.broadcast.to(client.room.id).emit('restartGame', speed)
             }
         }
     })

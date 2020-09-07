@@ -1,4 +1,4 @@
-import { START_GAME, GAME_LOST, ASSIGN_ADMIN, GAME_OVER, PUSH_NOTIFICATION, SHOW_HIDE_CONTROLLER, SET_MESSAGES, OPEN_CLOSE_CHAT, SWITCH_THEME } from '.'
+import { START_GAME, GAME_LOST, ASSIGN_ADMIN, GAME_OVER, PUSH_NOTIFICATION, SHOW_HIDE_CONTROLLER, SET_MESSAGES, OPEN_CLOSE_CHAT, SWITCH_THEME, GAME_SPEED } from '.'
 import socket from "../../socket"
 import { playBackgroundMusic } from './actions'
 
@@ -20,11 +20,11 @@ export const gameOn = () => {
     }
 }
 
-export const startGame = (payload) => {
+export const startGame = (payload, dropTime) => {
     return function (dispatch) {
         dispatch(gameOn())
         playBackgroundMusic()
-        socket.emit('gameOn', (payload))
+        socket.emit('gameOn', {first: payload, speed: dropTime})
     }
 }
 
@@ -94,5 +94,12 @@ export const lightOrDark = () => {
     return function (dispatch) {
         document.body.classList.toggle('dark')
         dispatch(switchTheme())
+    }
+}
+
+export const gameSpeed = (payload) => {
+    return {
+        type: GAME_SPEED,
+        payload
     }
 }
