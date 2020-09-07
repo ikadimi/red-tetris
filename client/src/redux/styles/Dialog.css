@@ -99,7 +99,6 @@
     border: solid 2px #595959;
     border-radius: 8px;
     padding: 20px 40px;
-    transform: translateY(0px);
     animation-name: gameOver;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -110,7 +109,7 @@
 
 @keyframes gameOver {
     from {transform: translateY(0px);}
-    to {transform: translateY(150px);}
+    to {transform: translateY(100px);}
 }
 
 /* -------------LOADING-------------- */
@@ -153,11 +152,12 @@
     border: 1px solid white;
     border-radius: 25px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .speedChoices {
     text-align: center;
-    margin: 10px;
+    margin: 5px auto;
     padding: 2px 5px;
 }
 

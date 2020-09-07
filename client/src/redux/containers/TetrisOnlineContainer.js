@@ -16,10 +16,8 @@ function TetrisOnlineContainer({location}) {
     useEffect(() => {
         let {name, room} = queryString.parse(location.search)
 
-        if (!name)
-            dispatch(joinFailure("Name not specified"))
-        else if (window.innerWidth < 300 || window.innerHeight < 300)
-            dispatch(joinFailure('WINDOW TO SMALL FOR THE GAME'))
+        if (!name || !room)
+            dispatch(joinFailure("Name or Room not specified"))
         else {
             if (Array.isArray(name))
                 name = name[0]
